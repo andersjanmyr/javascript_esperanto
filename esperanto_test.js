@@ -15,13 +15,15 @@ new Test.Unit.Runner({
 		this.assertEqual("example", Esperanto.Lab.example());
   	},
 
-	// Add the method remove to the Array.prototype.
+	// Add the method remove to the Array.prototype. Use splice!
 	testArrayRemove: function() {
-		this.assertArrayEqual(["a", "b", "d"], ["a", "b", "c", "d"].remove("c"));
+		this.assertArrayEqual(["a", "b", "d"], 
+							  ["a", "b", "c", "d"].remove("c"));
 	},
 	
 	// Add the method mixin to the Esperanto.Lab object. 
-	// The method should add all properties of the mixin to the mixee object
+	// The method should add all properties of the mixin to the 
+	// mixee object, EXCEPT the ones starting with _.
 	testMixin: function() {
 		var mixee = {};
 		Esperanto.Lab.mixin(mixee, Esperanto.Lab);
