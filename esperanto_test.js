@@ -33,14 +33,14 @@ new Test.Unit.Runner({
 		this.assertUndefined(mixee._example);
 	},
 	
-	// Add the function map to the Esperato.Lab object
-	// Map applies a function fo every element of an array 
+	// Add the function convert to the Esperato.Lab object
+	// Convert applies a function fo every element of an array 
 	// and returns the results as a new array.
-	testMixinMapToArray: function() {
+	testMixinConvertToArray: function() {
 		Esperanto.Lab.mixin(Array.prototype, Esperanto.Lab);
-		this.assertNotNull(Array.prototype.map);
-		this.assertEqual(typeof Array.prototype.map, 'function');
-		this.assertArrayEqual(["ONE", "TWO", "THREE"], ["one", "two", "three"].map(String.toUpperCase));		
+		this.assertNotNull(Array.prototype.convert);
+		this.assertEqual(typeof Array.prototype.convert, 'function');
+		this.assertArrayEqual(["ONE", "TWO", "THREE"], ["one", "two", "three"].convert(String.toUpperCase));		
 	},
 	
 	// Add the method kurry to the Function.prototype

@@ -24,7 +24,7 @@ Esperanto.Lab = function() {
 			}
 		},
 		
-		// map: function(conversionFunction) {}
+		// convert: function(conversionFunction) {}
 		map: function(conversionFunction) {
 			var newArr = [];
 			for (var i=0; i < this.length; i++) {
