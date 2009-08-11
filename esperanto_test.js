@@ -15,7 +15,7 @@ new Test.Unit.Runner({
 		this.assertEqual("example", Esperanto.Lab.example());
   	},
 
-	// Add the method remove to the Array.prototype. Use splice!
+	// Add the method remove to the Array.prototype. Use slice!
 	testArrayRemove: function() {
 		this.assertArrayEqual(["a", "b", "d"], 
 							  ["a", "b", "c", "d"].remove("c"));
