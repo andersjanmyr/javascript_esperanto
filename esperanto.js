@@ -14,8 +14,8 @@ Esperanto.Lab = function() {
 		
 		_example: function() {
 			return "_example";
-		}
-				
+		} // Add a comma after the brace when removing the comment below.
+						
 		// mixin: function(mixee, mixin) {}		
 		
 		// convert: function(conversionFunction) {}

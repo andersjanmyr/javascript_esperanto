@@ -15,7 +15,8 @@ new Test.Unit.Runner({
 		this.assertEqual("example", Esperanto.Lab.example());
   	},
 
-	// Add the method remove to the Array.prototype. Use slice!
+	// Add the method remove to the Array.prototype. Use slice, or splice!
+	// this.splice(i, 1) removes element at i.
 	testArrayRemove: function() {
 		this.assertArrayEqual(["a", "b", "d"], 
 							  ["a", "b", "c", "d"].remove("c"));
@@ -24,6 +25,7 @@ new Test.Unit.Runner({
 	// Add the method mixin to the Esperanto.Lab object. 
 	// The method should add all properties of the mixin to the 
 	// mixee object, EXCEPT the ones starting with _.
+	// for (var key in mixin)	
 	testMixin: function() {
 		var mixee = {};
 		Esperanto.Lab.mixin(mixee, Esperanto.Lab);
@@ -36,11 +38,13 @@ new Test.Unit.Runner({
 	// Add the function convert to the Esperato.Lab object
 	// Convert applies a function fo every element of an array 
 	// and returns the results as a new array.
+	// The function is then mixed into array prototype.
 	testMixinConvertToArray: function() {
 		Esperanto.Lab.mixin(Array.prototype, Esperanto.Lab);
 		this.assertNotNull(Array.prototype.convert);
 		this.assertEqual(typeof Array.prototype.convert, 'function');
-		this.assertArrayEqual(["ONE", "TWO", "THREE"], ["one", "two", "three"].convert(String.toUpperCase));		
+		var toUpperCase = function(s) {return s.toUpperCase()};
+		this.assertArrayEqual(["ONE", "TWO", "THREE"], ["one", "two", "three"].convert(toUpperCase));		
 	},
 	
 	// Add the method kurry to the Function.prototype
