@@ -49,9 +49,10 @@ Array.prototype.remove = function(item) {
 
 //Function.prototype.kurry = function() {}
 Function.prototype.kurry = function() {
+	var slice = Array.prototype.slice;
     var fn = this;
-    var args = Array.slice(arguments, 0);
+    var args = slice.apply(arguments);
     return function() {
-        return fn.apply(this, args.concat(Array.slice(arguments, 0)));
+        return fn.apply(null, args.concat(slice.apply(arguments)));
     };
 }
