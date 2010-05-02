@@ -36,7 +36,7 @@ new Test.Unit.Runner({
 	},
 	
 	// Add the function convert to the Esperato.Lab object
-	// Convert applies a function fo every element of an array 
+	// Convert applies a function to every element of an array 
 	// and returns the results as a new array.
 	// The function is then mixed into array prototype.
 	testMixinConvertToArray: function() {
