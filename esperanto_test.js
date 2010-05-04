@@ -20,6 +20,8 @@ new Test.Unit.Runner({
 	testArrayRemove: function() {
 		this.assertArrayEqual(["a", "b", "d"], 
 							  ["a", "b", "c", "d"].remove("c"));
+		this.assertArrayEqual(["a", "b", "c"], 
+							  ["a", "b", "c", "d"].remove("d"));
 	},
 	
 	// Add the method mixin to the Esperanto.Lab object. 
