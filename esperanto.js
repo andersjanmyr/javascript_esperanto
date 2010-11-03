@@ -2,54 +2,54 @@
 var Esperanto = Esperanto || {};
 
 Esperanto.Lab = function() {
-	var privVar = "example";
-	function privFunc() {
-		return privVar;
-	}
-	
-	return {
-		example: function() {
-			return privFunc();
-		},
-		
-		_example: function() {
-			return "_example";
-		},
-				
-		// mixin: function(mixee, mixin) {}		
-		mixin: function(mixee, mixin) {
-			for (var name in mixin) {
-			    if (name.charAt(0) != '_') 
-			    	(mixee[name] = mixin[name]); 
-			}
-		},
-		
-		// convert: function(conversionFunction) {}
-		convert: function(conversionFunction) {
-			var newArr = [];
-			for (var i=0; i < this.length; i++) {
-				newArr.push(conversionFunction(this[i]));
-			};
-			return newArr;
-		}
-		
-	}
-	
+  var privVar = "example";
+  function privFunc() {
+    return privVar;
+  }
+
+  return {
+    example: function() {
+      return privFunc();
+    },
+
+    _example: function() {
+      return "_example";
+    },
+
+    // 2. mixin: function(mixee, mixin) {}
+    mixin: function(mixee, mixin) {
+      for (var name in mixin) {
+          if (name.charAt(0) != '_')
+            (mixee[name] = mixin[name]);
+      }
+    }
+  }
+
 }()
 
 
-//Array.prototype.remove = function(item) {}
+//1. Array.prototype.remove = function(item) {}
 Array.prototype.remove = function(item) {
     for (i = 0; i < this.length; i++) {
         if (item == this[i])  this.splice(i, 1);
     }
-	return this;
+  return this;
+}
+
+//3. convert: function(conversionFunction) {}
+Array.prototype.convert = function(conversionFunction) {
+  var newArr = [];
+  for (var i=0; i < this.length; i++) {
+    newArr.push(conversionFunction(this[i]));
+  };
+  return newArr;
 }
 
 
-//Function.prototype.kurry = function() {}
-Function.prototype.kurry = function() {
-	var slice = Array.prototype.slice;
+
+//4. Function.prototype.curry = function() {}
+Function.prototype.curry = function() {
+  var slice = Array.prototype.slice;
     var fn = this;
     var args = slice.apply(arguments);
     return function() {
