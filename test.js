@@ -10,7 +10,7 @@ $(function(){
 
   // 1. Add the method remove to the Array.prototype. Use slice, or splice!
   // Hint: this.splice(i, 1) removes element at i.
-  test("Array.prototype.remove", function() {
+  test("Array.prototype.remove", 3, function() {
     same(["b", "c", "d"], ["a", "b", "c", "d"].remove("a"), "First element removed");
     same(["a", "b", "d"], ["a", "b", "c", "d"].remove("c"), "Middle element removed");
     same(["a", "b", "c"], ["a", "b", "c", "d"].remove("d"), "Last element removed");
@@ -21,7 +21,7 @@ $(function(){
   // The method should add all properties of the mixin to the
   // mixee object, EXCEPT the ones starting with _.
   // Hint: for (var key in mixin)
-  test("Esperanto.Lab.mixin", function() {
+  test("Esperanto.Lab.mixin", 4, function() {
     var mixee = {};
     Esperanto.Lab.mixin(mixee, Esperanto.Lab);
     ok(mixee.example, "Property 'example' of mixee should have a value");
@@ -35,7 +35,7 @@ $(function(){
   // Convert applies a function to every element of an array
   // and returns the results as a new array.
   // The function is then mixed into array prototype.
-  test('Array.prototype.convert', function() {
+  test('Array.prototype.convert', 4, function() {
     ok(Array.prototype.convert, "convert should be defined");
     equals(typeof Array.prototype.convert, 'function', "convert should be a function");
     var toUpperCase = function(s) {return s.toUpperCase()};
@@ -49,7 +49,7 @@ $(function(){
   // If not all elements of the function are given a new function is returned.
   // The new function can then be called again with additional arguments
   // while the first argument are already set.
-  test("Function.prototype.curry", function() {
+  test("Function.prototype.curry", 7, function() {
     ok(Function.prototype.curry, "curry should be defined");
     equals(typeof Function.prototype.curry, 'function', "curry should be a function");
     function sum(){
