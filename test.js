@@ -31,17 +31,17 @@ $(function(){
   });
 
 
-  // 3. Add the function map to the Array.prototype object
-  // Map applies a function to every element of an array
+  // 3. Add the function convert to the Array.prototype object
+  // Convert applies a function to every element of an array
   // and returns the results as a new array.
   // The function is then mixed into array prototype.
-  test('Array.prototype.map', function() {
-    ok(Array.prototype.map, "map should be defined");
-    equals(typeof Array.prototype.map, 'function', "map should be a function");
+  test('Array.prototype.convert', function() {
+    ok(Array.prototype.convert, "convert should be defined");
+    equals(typeof Array.prototype.convert, 'function', "convert should be a function");
     var toUpperCase = function(s) {return s.toUpperCase()};
-    same(["one", "two", "three"].map(toUpperCase), ["ONE", "TWO", "THREE"], "Map should apply the function toUpperCase to each element and return the result");
+    same(["one", "two", "three"].convert(toUpperCase), ["ONE", "TWO", "THREE"], "Convert should apply the function toUpperCase to each element and return the result");
     var length = function(s) {return s.length};
-    same(["one", "two", "three"].map(length), [3, 3, 5], "Map should apply the function length to each element and return the result");
+    same(["one", "two", "three"].convert(length), [3, 3, 5], "Convert should apply the function length to each element and return the result");
   });
 
   // Add the method curry to the Function.prototype
