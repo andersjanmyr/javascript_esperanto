@@ -10,10 +10,10 @@ $(function(){
 
   // 1. Add the method remove to the Array.prototype. Use slice, or splice!
   // Hint: this.splice(i, 1) removes element at i.
-  test("Array.prototype.remove", function() {
-    same(["b", "c", "d"], ["a", "b", "c", "d"].remove("a"), "First element removed");
-    same(["a", "b", "d"], ["a", "b", "c", "d"].remove("c"), "Middle element removed");
-    same(["a", "b", "c"], ["a", "b", "c", "d"].remove("d"), "Last element removed");
+  test("Array.prototype.remove", 3, function() {
+    same(["a", "b", "c", "d"].remove("a"), ["b", "c", "d"], "First element removed");
+    same(["a", "b", "c", "d"].remove("c"), ["a", "b", "d"], "Middle element removed");
+    same(["a", "b", "c", "d"].remove("d"), ["a", "b", "c"], "Last element removed");
   });
 
 
